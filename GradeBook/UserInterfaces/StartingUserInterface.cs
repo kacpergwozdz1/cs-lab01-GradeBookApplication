@@ -41,7 +41,7 @@ namespace GradeBook.UserInterfaces
             }
             var name = parts[1];
             var type = parts[2];
-            BaseGradeBook gradeBook = new BaseGradeBook(name);
+            BaseGradeBook gradeBook;
 
             
             if (type == "standard")
@@ -56,7 +56,7 @@ namespace GradeBook.UserInterfaces
             }
             else
             {
-                Console.WriteLine($"{type} is not a supported type of gradebook, please try again");
+                Console.WriteLine("{0} is not a supported type of gradebook, please try again", type);
                 return;
             }
 
@@ -81,12 +81,12 @@ namespace GradeBook.UserInterfaces
             GradeBookUserInterface.CommandLoop(gradeBook);
         }
 
-        public static void HelpCommand()
+        public static void HelpCommand() ///////////////////////// SPRAWDZ  , BEZ BLEDU ALE TESTY BEZ ZMIAN
         {
             Console.WriteLine();
             Console.WriteLine("GradeBook accepts the following commands:");
             Console.WriteLine();
-            Console.WriteLine("Create 'Name' - Creates a new gradebook where 'Name' is the name of the gradebook.");
+            Console.WriteLine("Creates a new gradebook where 'Name' is the name of the gradebook and 'Type' is what type of grading it should use");
             Console.WriteLine();
             Console.WriteLine("Load 'Name' - Loads the gradebook with the provided 'Name'.");
             Console.WriteLine();
